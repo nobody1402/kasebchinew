@@ -15,11 +15,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         document.querySelectorAll('.service-card').forEach(card => {
-            if (filter === 'all' || card.classList.contains(filter)) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
+            card.classList.toggle('hidden', filter !== 'all' && !card.classList.contains(filter));
         });
     });
 });
@@ -44,28 +40,50 @@ document.querySelector('.signup-form').addEventListener('submit', (e) => {
     setTimeout(() => feedback.remove(), 3000);
 });
 
-// اسلایدر خودکار
 let slideIndex = 0;
 const slides = document.querySelectorAll('.hero-slide');
+let slideInterval;
+
 function showSlides() {
     slides.forEach(slide => slide.classList.remove('active'));
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
+    slideIndex = (slideIndex % slides.length) + 1;
     slides[slideIndex - 1].classList.add('active');
-    setTimeout(showSlides, 5000);
 }
-showSlides();
 
-// افکت لودینگ تصاویر
-document.querySelectorAll('.hero-slide img').forEach(img => {
-    img.addEventListener('load', () => {
-        img.classList.add('loaded');
+function startSlider() {
+    slideInterval = setInterval(showSlides, 5000);
+}
+
+function stopSlider() {
+    clearInterval(slideInterval);
+}
+
+startSlider();
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startSlider();
+        } else {
+            stopSlider();
+        }
     });
+}, { threshold: 0.1 });
+
+observer.observe(document.querySelector('.hero-slider'));
+
+document.querySelectorAll('.hero-slide img').forEach(img => {
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+    }
 });
 
 document.querySelector('.chat-icon').addEventListener('click', () => {
     document.querySelector('.chat-window').classList.toggle('hidden');
 });
+
 document.querySelector('.chat-send').addEventListener('click', () => {
     const input = document.querySelector('.chat-input').value;
     if (input) {
@@ -75,37 +93,18 @@ document.querySelector('.chat-send').addEventListener('click', () => {
     }
 });
 
-// نوار پیشرفت اسکرول
+let ticking = false;
 window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.querySelector('.progress-bar').style.width = scrolled + '%';
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
 
-    const backToTop = document.querySelector('.back-to-top');
-    if (window.scrollY > 300) {
-        backToTop.classList.remove('hidden');
-    } else {
-        backToTop.classList.add('hidden');
-    }
-});
+            const backToTop = document.querySelector('.back-to-top');
+            backToTop.classList.toggle('hidden', window.scrollY <= 300);
 
-document.querySelector('.back-to-top').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// کنترل Dark Mode
-const toggle = document.getElementById('dark-mode-toggle');
-toggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', toggle.checked);
-});
-if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-    toggle.checked = true;
-}
-
-// کنترل پاپ‌آپ
-document.querySelector('.popup-close').addEventListener('click', () => {
-    document.querySelector('.welcome-popup').classList.add('hidden');
-});
+            ticking = false;
+        });
+        ticking
