@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="کاسبچی: مرجع تخصصی ارتباط کافه‌ها با تأمین‌کنندگان حرفه‌ای">
+    <meta property="og:title" content="کاسبچی: مرجع تخصصی کافه‌داری">
+    <meta property="og:description" content="بهترین تأمین‌کنندگان کافه‌ها را مقایسه کنید و هوشمندانه انتخاب کنید">
+    <meta property="og:image" content="https://nobody1402.github.io/kasebchinew/assets/images/slider-1.webp">
+    <meta property="og:url" content="https://nobody1402.github.io/kasebchinew">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>کاسبچی</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazir-font@32.102.2/dist/font-face.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background: #f4a261;
+            z-index: 2000;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- لودر -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- پاپ‌آپ خوش‌آمدگویی -->
+    <div class="welcome-popup hidden">
+        <div class="popup-content">
+            <span class="popup-close">×</span>
+            <h3>به کاسبچی خوش اومدی!</h3>
+            <p>برای ثبت‌نام اولیه 10% تخفیف بگیر 😍</p>
+            <a href="#signup" class="btn btn-primary">ثبت‌نام کن</a>
+        </div>
+    </div>
+
+    <!-- هدر -->
+    <header>
+        <div class="logo">
+            <span class="logo-text">KasebChi</span>
+        </div>
+        <div class="theme-switch">
+            <input type="checkbox" id="dark-mode-toggle" class="dark-mode-toggle">
+            <label for="dark-mode-toggle">🌙</label>
+        </div>
+        <nav class="nav-menu">
+            <button class="menu-toggle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2"/>
+                </svg>
+            </button>
+            <ul>
+                <li><a href="#home">خانه</a></li>
+                <li><a href="about.html">درباره ما</a></li>
+                <li><a href="#signup">ثبت‌نام</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- بخش خوش‌آمدگویی -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="hero-slide"><img src="assets/images/slider-1.webp" alt="کافه 1" loading="lazy"></div>
+            <div class="hero-slide"><img src="assets/images/slider-2.webp" alt="کافه 2" loading="lazy"></div>
+            <div class="hero-slide"><img src="assets/images/slider-3.webp" alt="کافه 3" loading="lazy"></div>
+        </div>
+        <div class="hero-content-box">
+            <div class="hero-content">
+                <h1 class="typing-effect">کاسبچی، همراه شما در کافه</h1>
+                <p>بهترین تأمین‌کنندگان را مقایسه کنید و هوشمندانه انتخاب کنید</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary pulse">شروع کنید</a>
+                    <a href="#compare" class="btn btn-secondary">مقایسه تأمین‌کنندگان</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش خدمات -->
+    <section id="services" class="services">
+        <h2 class="dark-mode-darker">خدمات کاسبچی</h2>
+        <p class="section-subtitle dark-mode-black">تمامی نیازهای کافه شما در یک پلتفرم حرفه‌ای</p>
+        <div class="service-filter">
+            <button class="filter-btn active" data-filter="all">همه</button>
+            <button class="filter-btn" data-filter="supply">تأمین</button>
+            <button class="filter-btn" data-filter="design">طراحی</button>
+            <button class="filter-btn" data-filter="support">پشتیبانی</button>
+        </div>
+        <div class="service-grid">
+            <div class="service-card supply" data-aos="fade-up" data-aos-delay="100">
+                <a href="coffee-beans.html">
+                    <img src="assets/images/service-coffee.png" alt="دان قهوه" class="service-img" loading="lazy">
+                    <h3>دان قهوه</h3>
+                    <p>دسترسی به انواع دان‌های قهوه از بهترین مزارع دنیا</p>
+                </a>
+            </div>
+            <div class="service-card supply" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/service-equipment.png" alt="تجهیزات صنعتی کافه" class="service-img" loading="lazy">
+                <h3>تجهیزات صنعتی کافه</h3>
+                <p>تجهیزات حرفه‌ای با ضمانت اصالت و کیفیت</p>
+            </div>
+            <div class="service-card supply" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/service-cups.png" alt="ظروف کافه" class="service-img" loading="lazy">
+                <h3>ظروف کافه</h3>
+                <p>ظروف شیک و مدرن برای سرو نوشیدنی‌ها</p>
+            </div>
+           
+             <div class="service-card supply" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/service-disposable.png" alt="ظروف یک‌بارمصرف" class="service-img" loading="lazy">
+                <h3>ظروف یک‌بارمصرف</h3>
+                <p>ظروف باکیفیت و سازگار با محیط زیست</p>
+            </div>
+            <div class="service-card supply" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/service-dessert.png" alt="دسر" class="service-img" loading="lazy">
+                <h3>کیک و دسر</h3>
+                <p>دسرهای خانگی با کیفیت برای منوی کافه</p>
+            </div>
+            
+            <div class="service-card design" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/service-decor.png" alt="دکور" class="service-img" loading="lazy">
+                <h3>طراح دکور</h3>
+                <p>فضایی زیبا و کاربردی با طراحان حرفه‌ای</p>
+            </div>
+            <div class="service-card design" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/service-menu.png" alt="منو" class="service-img" loading="lazy">
+                <h3>طراح منو</h3>
+                <p>منوی خلاقانه و جذاب با ایده‌های نوآورانه</p>
+            
+            </div>
+             <div class="service-card design" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/images/service-setup.png" alt="راه‌اندازی کافه" class="service-img" loading="lazy">
+                <h3>راه‌اندازی کافه</h3>
+                <p>خدمات جامع راه‌اندازی از تأمین تا آموزش</p>
+            </div>
+           
+            <div class="service-card support" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/images/service-sales.png" alt="فروش" class="service-img" loading="lazy">
+                <h3>کارشناس فروش</h3>
+                <p>مشاوره تخصصی برای افزایش فروش کافه</p>
+            </div>
+ 
+            <div class="service-card support" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/service-staff.png" alt="نیروی انسانی" class="service-img" loading="lazy">
+                <h3>نیروی انسانی</h3>
+                <p>استخدام باریستا و نیروی خدماتی حرفه‌ای</p>
+            </div>
+            <div class="service-card support" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/service-repair.png" alt="تعمیر" class="service-img" loading="lazy">
+                <h3>تعمیرات</h3>
+                <p>خدمات تعمیر سریع با تضمین کیفیت</p>
+            </div>
+            <div class="service-card support" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/images/service-support.png" alt="پشتیبانی" class="service-img" loading="lazy">
+                <h3>پشتیبانی</h3>
+                <p>آموزش، تأمین قطعات و پشتیبانی تجهیزات</p>
+            </div>
+            <div class="service-card support" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/service-purchase.png" alt="خرید" class="service-img" loading="lazy">
+                <h3>خرید</h3>
+                <p>برای کافه‌هایی که می‌خواهند وسایلشان را بفروشند یا کافه را با وسایل تحویل دهند</p>
+            </div>
+            <div class="service-card supply" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/service-urgent.png" alt="تأمین فوری" class="service-img" loading="lazy">
+                <h3>تأمین فوری</h3>
+                <p>ارسال سریع ملزومات کافه در کوتاه‌ترین زمان</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش مقایسه هوشمند -->
+    <section id="compare" class="compare">
+        <h2 class="dark-mode-darker">مقایسه هوشمند تأمین‌کنندگان</h2>
+        <p class="section-subtitle dark-mode-black">بهترین تأمین‌کننده را برای نیازهای کافه خود پیدا کنید</p>
+        <div class="compare-benefits">
+            <div class="benefit" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/compare-price.png" alt="مقایسه قیمت‌ها" class="benefit-img" loading="lazy">
+                <h3>مقایسه قیمت‌ها</h3>
+                <p>بهترین قیمت‌ها را از تأمین‌کنندگان مقایسه کنید</p>
+            </div>
+            <div class="benefit" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/compare-quality.png" alt="بررسی کیفیت" class="benefit-img" loading="lazy">
+                <h3>بررسی کیفیت</h3>
+                <p>امتیازات و نظرات کاربران را مشاهده کنید</p>
+            </div>
+            <div class="benefit" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/compare-delivery.png" alt="زمان تحویل" class="benefit-img" loading="lazy">
+                <h3>زمان تحویل</h3>
+                <p>سرعت ارسال و تحویل را مقایسه کنید</p>
+            </div>
+            <div class="benefit" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/images/compare-support.png" alt="خدمات پس از فروش" class="benefit-img" loading="lazy">
+                <h3>خدمات پس از فروش</h3>
+                <p>گارانتی و پشتیبانی را بررسی کنید</p>
+            </div>
+        </div>
+        <a href="#signup" class="btn btn-primary">شروع مقایسه هوشمند</a>
+        <h3 class="table-title dark-mode-darker">نمونه مقایسه تأمین‌کنندگان</h3>
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>عنوان مقایسه</th>
+                    <th>تأمین‌کننده A</th>
+                    <th>تأمین‌کننده B</th>
+                    <th>تأمین‌کننده C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>قیمت</td>
+                    <td>۱۲۰,۰۰۰ تومان</td>
+                    <td>۱۵۰,۰۰۰ تومان</td>
+                    <td>۱۳۵,۰۰۰ تومان</td>
+                </tr>
+                <tr>
+                    <td>امتیاز کاربران</td>
+                    <td>۴.۸ از ۵</td>
+                    <td>۳.۶ از ۵</td>
+                    <td>۴.۲ از ۵</td>
+                </tr>
+                <tr>
+                    <td>زمان تحویل</td>
+                    <td>۲ روز کاری</td>
+                    <td>۳ روز کاری</td>
+                    <td>۵ روز کاری</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- بخش نظرات مشتریان -->
+    <section id="testimonials" class="testimonials">
+        <h2 class="dark-mode-darker">نظرات مشتریان ما</h2>
+        <p class="section-subtitle dark-mode-black">کافه‌دارانی که از کاسبچی استفاده کرده‌اند</p>
+        <div class="testimonial-grid">
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/testimonial-noa.png" alt="کافه نوآ" class="testimonial-img" loading="lazy">
+                <p>“با کاسبچی تأمین‌کنندگان باکیفیت و مقرون‌به‌صرفه پیدا کردیم. مقایسه هوشمند عالی بود!”</p>
+                <h4 class="cafe-name">علی محمدی - مدیر کافه نوآ</h4>
+            </div>
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/testimonial-moon.png" alt="کافه ماه" class="testimonial-img" loading="lazy">
+                <p>“از طراحی دکور تا استخدام باریستا، کاسبچی راه‌اندازی کافه ما را بی‌نقص کرد.”</p>
+                <h4 class="cafe-name">سارا احمدی - صاحب کافه ماه</h4>
+            </div>
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/testimonial-sky.png" alt="کافه آسمان" class="testimonial-img" loading="lazy">
+                <p>“خدمات تعمیر کاسبچی دستگاه اسپرسوی ما را سریع درست کرد. بدون وقفه به کار ادامه دادیم!”</p>
+                <h4 class="cafe-name">امیر رضایی - مدیر کافه آسمان</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش گالری کافه‌های همکار -->
+    <section id="partners" class="partners">
+        <h2 class="dark-mode-darker">کافه‌های همکار ما</h2>
+        <p class="section-subtitle dark-mode-black">با افتخار در کنار بهترین کافه‌های ایران</p>
+        <div class="partner-grid">
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/images/partner-noa.png" alt="کافه نوآ" loading="lazy">
+                <h3 class="cafe-name">کافه نوآ</h3>
+            </div>
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/partner-moon.png" alt="کافه ماه" loading="lazy">
+                <h3 class="cafe-name">کافه ماه</h3>
+            </div>
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/images/partner-sky.png" alt="کافه آسمان" loading="lazy">
+                <h3 class="cafe-name">کافه آسمان</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش بلاگ -->
+    <section id="blog" class="blog">
+        <h2 class="dark-mode-darker">اخبار و مقالات</h2>
+        <p class="section-subtitle dark-mode-black">آخرین ترفندها و اخبار صنعت کافه‌داری</p>
+        <div class="blog-grid" data-aos="fade-up">
+            <div class="blog-card">
+                <img src="assets/images/blog-1.jpg" alt="بهترین قهوه‌ها" loading="lazy">
+                <h3>بهترین انواع قهوه در 1404</h3>
+                <p>راز انتخاب قهوه‌ای که مشتری‌ها عاشقش می‌شن!</p>
+                <a href="#" class="btn btn-secondary">بیشتر بخوانید</a>
+            </div>
+            <div class="blog-card">
+                <img src="assets/images/blog-2.jpg" alt="دکور کافه" loading="lazy">
+                <h3>دکوراسیون کافه‌های مدرن</h3>
+                <p>ایده‌هایی برای جذاب‌تر کردن فضای کافه</p>
+                <a href="#" class="btn btn-secondary">بیشتر بخوانید</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش فراخوان -->
+    <section id="cta" class="cta">
+        <h2>همین امروز به کاسبچی بپیوندید</h2>
+        <p>بهترین تأمین‌کنندگان و متخصصان کافه‌داری در یک پلتفرم</p>
+        <a href="#signup" class="btn btn-primary">ثبت‌نام رایگان</a>
+    </section>
+
+    <!-- بخش ثبت‌نام -->
+    <section id="signup" class="signup">
+        <h2 class="dark-mode-darker">ثبت‌نام در کاسبچی</h2>
+        <p class="dark-mode-darker">همین حالا به جمع کافه‌دارهای حرفه‌ای بپیوندید</p>
+        <form class="signup-form">
+            <input type="text" placeholder="نام کافه" required>
+            <input type="email" placeholder="ایمیل" required>
+            <input type="tel" placeholder="شماره تماس" required>
+            <button type="submit" class="btn btn-primary">ثبت‌نام</button>
+        </form>
+    </section>
+
+    <!-- فوتر -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>درباره کاسبچی</h3>
+                <p>پلتفرم تخصصی ارتباط کافه‌ها با تأمین‌کنندگان و متخصصان صنعت کافه در ایران</p>
+            </div>
+            <div class="footer-section">
+                <h3>خدمات اصلی</h3>
+                <ul>
+                    <li><a href="#services">تأمین تجهیزات کافه</a></li>
+                    <li><a href="coffee-beans.html">دان قهوه</a></li>
+                    <li><a href="#services">خدمات راه‌اندازی کافه</a></li>
+                    <li><a href="#services">دکور</a></li>
+                    <li><a href="#services">تعمیر و پشتیبانی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>پیوندهای سریع</h3>
+                <ul>
+                    <li><a href="#home">صفحه اصلی</a></li>
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#compare">مقایسه تأمین‌کنندگان</a></li>
+                    <li><a href="#blog">بلاگ</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <p>تهران، خیابان ولیعصر، برج آسمان، طبقه ۱۲، واحد ۵</p>
+                <p>۰۲۱-۸۸۷۷۶۶۵۵</p>
+                <p>info@kasebchi.ir</p>
+            </div>
+        </div>
+        <div class="footer-socials">
+            <h3>ما را دنبال کنید</h3>
+            <div class="social-links">
+                <a href="https://instagram.com/kasebchi" target="_blank"><img src="assets/images/instagram-icon.png" alt="اینستاگرام"></a>
+                <a href="https://t.me/kasebchi" target="_blank"><img src="assets/images/telegram-icon.png" alt="تلگرام"></a>
+                <a href="https://wa.me/989123456789" target="_blank"><img src="assets/images/whatsapp-icon.png" alt="واتساپ"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>تمامی حقوق این وب‌سایت محفوظ است. © ۱۴۰۴ کاسبچی | طراحی‌شده با افتخار توسط Grok</p>
+            <div class="footer-links">
+                <a href="#">شرایط استفاده</a>
+                <a href="#">حریم خصوصی</a>
+                <a href="#">همکاری با ما</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- چت‌بات -->
+    <div class="chatbot">
+        <img src="assets/images/chat-icon.png" alt="چت با ما" class="chat-icon">
+        <div class="chat-window hidden">
+            <p>سلام! چطور می‌تونم بهت کمک کنم؟</p>
+            <input type="text" placeholder="سؤالت رو بنویس..." class="chat-input">
+            <button class="chat-send">ارسال</button>
+        </div>
+    </div>
+
+    <!-- دکمه برگشت به بالا -->
+    <button class="back-to-top hidden">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke-width="2"/>
+        </svg>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    </script>
+</body>
+</html>
