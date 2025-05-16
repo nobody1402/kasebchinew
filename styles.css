@@ -729,7 +729,6 @@ body.dark-mode .testimonials h2 {
 body.dark-mode .testimonial {
     background: #2a2a2a;
 }
-
 .testimonial::before {
     content: '';
     position: absolute;
