@@ -54,18 +54,25 @@ function showSlides() {
     slides[slideIndex - 1].classList.add('active');
     setTimeout(showSlides, 5000);
 }
-showSlides();
+if (slides.length > 0) {
+    showSlides();
+}
 
 // افکت لودینگ تصاویر
 document.querySelectorAll('.hero-slide img').forEach(img => {
-    img.addEventListener('load', () => {
+    if (img.complete) {
         img.classList.add('loaded');
-    });
+    } else {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    }
 });
 
 document.querySelector('.chat-icon').addEventListener('click', () => {
     document.querySelector('.chat-window').classList.toggle('hidden');
 });
+
 document.querySelector('.chat-send').addEventListener('click', () => {
     const input = document.querySelector('.chat-input').value;
     if (input) {
@@ -75,21 +82,7 @@ document.querySelector('.chat-send').addEventListener('click', () => {
     }
 });
 
-// نوار پیشرفت اسکرول
-window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.querySelector('.progress-bar').style.width = scrolled + '%';
-
-    const backToTop = document.querySelector('.back-to-top');
-    if (window.scrollY > 300) {
-        backToTop.classList.remove('hidden');
-    } else {
-        backToTop.classList.add('hidden');
-    }
-});
-
+// دکمه برگشت به بالا
 document.querySelector('.back-to-top').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -108,4 +101,14 @@ if (localStorage.getItem('darkMode') === 'true') {
 // کنترل پاپ‌آپ
 document.querySelector('.popup-close').addEventListener('click', () => {
     document.querySelector('.welcome-popup').classList.add('hidden');
+});
+
+// نوار پیشرفت اسکرول (اختیاری، اگر المان progress-bar رو اضافه کنی)
+window.addEventListener('scroll', () => {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.scrollY > 300) {
+        backToTop.classList.remove('hidden');
+    } else {
+        backToTop.classList.add('hidden');
+    }
 });
