@@ -1,14 +1,34 @@
+// منوی موبایل
 document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.nav-menu ul').classList.toggle('show');
+    const navMenu = document.querySelector('.nav-menu ul');
+    if (navMenu) {
+        navMenu.classList.toggle('show');
+    }
 });
 
+// لودر
 window.addEventListener('load', () => {
-    document.querySelector('.loader').classList.add('hidden');
+    const loader = document.querySelector('.loader');
+    if (loader) {
+        loader.classList.add('hidden');
+    }
     setTimeout(() => {
-        document.querySelector('.welcome-popup').classList.remove('hidden');
+        const popup = document.querySelector('.welcome-popup');
+        if (popup) {
+            popup.classList.remove('hidden');
+        }
     }, 1000);
 });
 
+// جلوگیری از گیر کردن لودر در صورت خطا
+setTimeout(() => {
+    const loader = document.querySelector('.loader');
+    if (loader && !loader.classList.contains('hidden')) {
+        loader.classList.add('hidden');
+    }
+}, 5000);
+
+// فیلتر خدمات
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -24,6 +44,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
+// فرم ثبت‌نام
 document.querySelector('.signup-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.querySelector('input[placeholder="نام کافه"]').value;
@@ -48,11 +69,13 @@ document.querySelector('.signup-form').addEventListener('submit', (e) => {
 let slideIndex = 0;
 const slides = document.querySelectorAll('.hero-slide');
 function showSlides() {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].classList.add('active');
-    setTimeout(showSlides, 5000);
+    if (slides.length > 0) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slideIndex++;
+        if (slideIndex > slides.length) slideIndex = 1;
+        slides[slideIndex - 1].classList.add('active');
+        setTimeout(showSlides, 5000);
+    }
 }
 if (slides.length > 0) {
     showSlides();
@@ -66,11 +89,18 @@ document.querySelectorAll('.hero-slide img').forEach(img => {
         img.addEventListener('load', () => {
             img.classList.add('loaded');
         });
+        img.addEventListener('error', () => {
+            img.classList.add('loaded'); // حتی اگه تصویر لود نشه، لودر گیر نکنه
+        });
     }
 });
 
+// چت‌بات
 document.querySelector('.chat-icon').addEventListener('click', () => {
-    document.querySelector('.chat-window').classList.toggle('hidden');
+    const chatWindow = document.querySelector('.chat-window');
+    if (chatWindow) {
+        chatWindow.classList.toggle('hidden');
+    }
 });
 
 document.querySelector('.chat-send').addEventListener('click', () => {
@@ -100,15 +130,20 @@ if (localStorage.getItem('darkMode') === 'true') {
 
 // کنترل پاپ‌آپ
 document.querySelector('.popup-close').addEventListener('click', () => {
-    document.querySelector('.welcome-popup').classList.add('hidden');
+    const popup = document.querySelector('.welcome-popup');
+    if (popup) {
+        popup.classList.add('hidden');
+    }
 });
 
-// نوار پیشرفت اسکرول (اختیاری، اگر المان progress-bar رو اضافه کنی)
+// نوار پیشرفت اسکرول
 window.addEventListener('scroll', () => {
     const backToTop = document.querySelector('.back-to-top');
-    if (window.scrollY > 300) {
-        backToTop.classList.remove('hidden');
-    } else {
-        backToTop.classList.add('hidden');
+    if (backToTop) {
+        if (window.scrollY > 300) {
+            backToTop.classList.remove('hidden');
+        } else {
+            backToTop.classList.add('hidden');
+        }
     }
 });
