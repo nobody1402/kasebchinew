@@ -134,12 +134,6 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
-    max-width: 150px; /* محدود کردن اندازه لوگو */
-    height: auto;
-    display: block;
-}
-
 .logo-text {
     font-weight: 700;
     font-size: 1.8rem;
@@ -1314,12 +1308,19 @@ body.dark-mode .coffee-beans-section h1 {
 body.dark-mode .coffee-beans-section .section-subtitle {
     color: #ccc;
 }
+/* استایل‌های هدر و لوگو */
+.logo img {
+    max-width: 150px; /* محدود کردن اندازه لوگو */
+    height: auto;
+    display: block;
+}
 
 /* استایل‌های صفحه پست وبلاگ */
 .blog-post {
     padding: 4rem 1rem;
     text-align: center;
     background: #f8edeb;
+    min-height: 100vh;
 }
 
 .blog-post h1 {
@@ -1334,11 +1335,13 @@ body.dark-mode .blog-post h1 {
 
 .blog-img {
     max-width: 100%;
+    width: 100%;
+    max-height: 400px;
     height: auto;
     border-radius: 10px;
     margin: 1.5rem auto;
-    max-height: 400px;
     object-fit: cover;
+    display: block;
 }
 
 .blog-post p, .blog-post ul {
@@ -1347,6 +1350,7 @@ body.dark-mode .blog-post h1 {
     line-height: 1.8;
     margin: 1rem auto;
     max-width: 800px;
+    text-align: right;
 }
 body.dark-mode .blog-post p, body.dark-mode .blog-post ul {
     color: #ccc;
