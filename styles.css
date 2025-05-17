@@ -123,7 +123,7 @@ body.dark-mode .popup-content p {
 /* هدر */
 header {
     background: #3c2f2f;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,7 +148,7 @@ header {
 
 .theme-switch {
     position: relative;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 .dark-mode-toggle {
     display: none;
@@ -166,7 +166,7 @@ header {
 .nav-menu ul {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .nav-menu a {
@@ -209,6 +209,7 @@ body.dark-mode .nav-menu a:hover {
     border: none;
     color: #fff;
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .menu-toggle svg {
@@ -220,14 +221,38 @@ body.dark-mode .nav-menu a:hover {
     stroke: #f4a261;
 }
 
+/* تنظیمات ریسپانسیو برای هدر */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #3c2f2f;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 8px 8px;
+    }
+    .nav-menu ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .theme-switch {
+        margin-right: 0;
+    }
+}
+
 /* بخش خوش‌آمدگویی */
 .hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12rem 2rem 8rem;
+    padding: 8rem 1rem 4rem;
 }
 
 .hero-slider {
@@ -266,9 +291,10 @@ body.dark-mode .nav-menu a:hover {
 .hero-content-box {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
-    padding: 2rem;
+    padding: 1.5rem;
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
 }
 
 .hero-content {
@@ -279,10 +305,10 @@ body.dark-mode .nav-menu a:hover {
 }
 
 .hero h1 {
-    font-size: 3.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
 }
@@ -303,24 +329,26 @@ body.dark-mode .nav-menu a:hover {
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    max-width: 800px;
-    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeInUp 1s ease 0.3s forwards;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 1.5rem;
     text-decoration: none;
     border-radius: 50px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -391,15 +419,15 @@ body.dark-mode .btn-secondary:hover {
 
 /* بخش خدمات */
 .services {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: url('assets/images/texture-bg.jpg') center/cover no-repeat;
     text-align: center;
 }
 
 .services h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .services h2 {
@@ -407,10 +435,10 @@ body.dark-mode .services h2 {
 }
 
 .section-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 3rem;
-    max-width: 900px;
+    margin-bottom: 2rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -421,17 +449,19 @@ body.dark-mode .section-subtitle {
 .service-filter {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
-    padding: 0.5rem 1.5rem;
+    padding: 0.4rem 1rem;
     border: none;
     background: #f4a261;
     color: #3c2f2f;
     border-radius: 20px;
     cursor: pointer;
+    font-size: 0.9rem;
     transition: background 0.3s ease;
 }
 body.dark-mode .filter-btn {
@@ -448,22 +478,22 @@ body.dark-mode .filter-btn:hover, body.dark-mode .filter-btn.active {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-card {
     background: #f8edeb;
-    border-radius: 16px;
-    padding: 1.5rem;
+    border-radius: 12px;
+    padding: 1rem;
     text-align: center;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
-    max-width: 280px;
+    max-width: 220px;
     margin: 0 auto;
 }
 body.dark-mode .service-card {
@@ -489,10 +519,10 @@ body.dark-mode .service-card {
 
 .service-img {
     width: 100%;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
     position: relative;
     z-index: 2;
     transition: transform 0.5s ease;
@@ -509,9 +539,9 @@ body.dark-mode .service-card {
 }
 
 .service-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: #000;
     position: relative;
     z-index: 2;
@@ -521,7 +551,7 @@ body.dark-mode .service-card h3 {
 }
 
 .service-card p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #000;
     font-weight: 300;
     position: relative;
@@ -537,15 +567,15 @@ body.dark-mode .service-card p {
 
 /* بخش مقایسه */
 .compare {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: url('assets/images/compare-bg.jpg') center/cover no-repeat;
     text-align: center;
 }
 
 .compare h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .compare h2 {
@@ -554,17 +584,17 @@ body.dark-mode .compare h2 {
 
 .compare-benefits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin: 3rem auto;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .benefit {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
     position: relative;
@@ -597,10 +627,10 @@ body.dark-mode .benefit {
 
 .benefit-img {
     width: 100%;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
     position: relative;
     z-index: 2;
     transition: transform 0.5s ease;
@@ -612,9 +642,9 @@ body.dark-mode .benefit {
 }
 
 .benefit h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: #3c2f2f;
     position: relative;
     z-index: 2;
@@ -624,7 +654,7 @@ body.dark-mode .benefit h3 {
 }
 
 .benefit p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #666;
     position: relative;
     z-index: 2;
@@ -634,9 +664,9 @@ body.dark-mode .benefit p {
 }
 
 .table-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin: 3rem 0 1.5rem;
+    margin: 2rem 0 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .table-title {
@@ -645,11 +675,11 @@ body.dark-mode .table-title {
 
 .compare-table {
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     border-collapse: collapse;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -658,9 +688,9 @@ body.dark-mode .compare-table {
 }
 
 .compare-table th, .compare-table td {
-    padding: 1.2rem;
+    padding: 1rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border-bottom: 1px solid #ddd;
 }
 body.dark-mode .compare-table th, body.dark-mode .compare-table td {
@@ -683,17 +713,28 @@ body.dark-mode .compare-table td {
     color: #f4a261;
 }
 
+/* تنظیمات ریسپانسیو برای جدول */
+@media (max-width: 768px) {
+    .compare-table {
+        display: block;
+        overflow-x: auto;
+    }
+    .compare-table th, .compare-table td {
+        min-width: 120px;
+    }
+}
+
 /* بخش نظرات */
 .testimonials {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: url('assets/images/texture-bg.jpg') center/cover no-repeat;
     text-align: center;
 }
 
 .testimonials h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .testimonials h2 {
@@ -702,19 +743,19 @@ body.dark-mode .testimonials h2 {
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 3rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
 .testimonial {
     background: #f8edeb;
-    border-radius: 16px;
-    padding: 1.5rem;
+    border-radius: 12px;
+    padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease;
-    max-width: 300px;
+    max-width: 250px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -742,10 +783,10 @@ body.dark-mode .testimonial {
 
 .testimonial-img {
     width: 100%;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
     position: relative;
     z-index: 2;
     transition: transform 0.5s ease;
@@ -757,9 +798,9 @@ body.dark-mode .testimonial {
 }
 
 .testimonial p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #000;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     position: relative;
     z-index: 2;
 }
@@ -768,7 +809,7 @@ body.dark-mode .testimonial p {
 }
 
 .testimonial h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #000;
     position: relative;
@@ -791,15 +832,15 @@ body.dark-mode .cafe-name {
 
 /* بخش گالری کافه‌ها */
 .partners {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: #f8edeb;
     text-align: center;
 }
 
 .partners h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .partners h2 {
@@ -808,15 +849,15 @@ body.dark-mode .partners h2 {
 
 .partner-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .partner-card {
     text-align: center;
-    max-width: 250px;
+    max-width: 200px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -828,7 +869,7 @@ body.dark-mode .partners h2 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 200px;
+    height: 160px;
     background: rgba(60, 47, 47, 0.4);
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -841,9 +882,9 @@ body.dark-mode .partners h2 {
 
 .partner-card img {
     width: 100%;
-    height: 200px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: transform 0.4s ease;
     position: relative;
     z-index: 2;
@@ -854,8 +895,8 @@ body.dark-mode .partners h2 {
 }
 
 .partner-card h3 {
-    font-size: 1.2rem;
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
     color: #000;
     position: relative;
     z-index: 2;
@@ -866,15 +907,15 @@ body.dark-mode .partner-card h3 {
 
 /* بخش بلاگ */
 .blog {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: #f8edeb;
     text-align: center;
 }
 
 .blog h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .blog h2 {
@@ -883,15 +924,15 @@ body.dark-mode .blog h2 {
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 3rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
 .blog-card {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease;
@@ -906,13 +947,13 @@ body.dark-mode .blog-card {
 
 .blog-card img {
     width: 100%;
-    height: 200px;
+    height: 160px;
     object-fit: cover;
 }
 
 .blog-card h3 {
-    font-size: 1.3rem;
-    margin: 1rem;
+    font-size: 1.1rem;
+    margin: 0.5rem;
     color: #3c2f2f;
 }
 body.dark-mode .blog-card h3 {
@@ -920,9 +961,9 @@ body.dark-mode .blog-card h3 {
 }
 
 .blog-card p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #666;
-    margin: 0 1rem 1rem;
+    margin: 0 0.5rem 0.5rem;
 }
 body.dark-mode .blog-card p {
     color: #ccc;
@@ -930,37 +971,37 @@ body.dark-mode .blog-card p {
 
 /* بخش فراخوان */
 .cta {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     text-align: center;
     background: linear-gradient(rgba(60, 47, 47, 0.8), rgba(60, 47, 47, 0.8)), url('assets/images/cta-bg.jpg') center/cover no-repeat;
     color: #fff;
 }
 
 .cta h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .cta p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* بخش ثبت‌نام */
 .signup {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: url('assets/images/texture-bg.jpg') center/cover no-repeat;
     text-align: center;
 }
 
 .signup h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .signup h2 {
@@ -968,18 +1009,18 @@ body.dark-mode .signup h2 {
 }
 
 .signup-form {
-    max-width: 500px;
-    margin: 2rem auto;
+    max-width: 400px;
+    margin: 1.5rem auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .signup-form input {
-    padding: 1rem;
+    padding: 0.8rem;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
 }
 body.dark-mode .signup-form input {
     background: #2a2a2a;
@@ -988,13 +1029,13 @@ body.dark-mode .signup-form input {
 }
 
 .signup-form button {
-    padding: 1rem;
-    font-size: 1.1rem;
+    padding: 0.8rem;
+    font-size: 1rem;
 }
 
 .form-feedback {
-    font-size: 1rem;
-    margin-top: 1rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
     text-align: center;
     animation: fadeIn 0.5s ease;
 }
@@ -1010,25 +1051,25 @@ body.dark-mode .form-feedback {
 footer {
     background: linear-gradient(rgba(60, 47, 47, 0.9), rgba(60, 47, 47, 0.9)), url('assets/images/footer-bg.jpg') center/cover no-repeat;
     color: #fff;
-    padding: 4rem 2rem;
+    padding: 3rem 1rem;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-section h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .footer-section p, .footer-section ul {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.9;
 }
 
@@ -1048,13 +1089,13 @@ footer {
 
 .footer-socials {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .social-links a {
@@ -1062,8 +1103,8 @@ footer {
 }
 
 .social-links img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     transition: transform 0.3s ease;
 }
 
@@ -1073,16 +1114,16 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-links a {
     color: #fff;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
@@ -1093,13 +1134,13 @@ footer {
 /* چت‌بات */
 .chatbot {
     position: fixed;
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
     z-index: 1000;
 }
 .chat-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -1108,16 +1149,16 @@ footer {
 }
 .chat-window {
     position: absolute;
-    bottom: 80px;
+    bottom: 70px;
     left: 0;
-    width: 300px;
+    width: 250px;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
+    padding: 0.8rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 body.dark-mode .chat-window {
     background: #2a2a2a;
@@ -1126,9 +1167,9 @@ body.dark-mode .chat-window {
     display: none;
 }
 .chat-input {
-    padding: 0.5rem;
+    padding: 0.4rem;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 body.dark-mode .chat-input {
     background: #1a1a1a;
@@ -1136,11 +1177,11 @@ body.dark-mode .chat-input {
     color: #f4a261;
 }
 .chat-send {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     background: #f4a261;
     color: #3c2f2f;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -1157,13 +1198,13 @@ body.dark-mode .chat-send:hover {
 /* دکمه برگشت به بالا */
 .back-to-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     background: #f4a261;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1188,6 +1229,8 @@ body.dark-mode .back-to-top:hover {
 }
 .back-to-top svg {
     stroke: #3c2f2f;
+    width: 20px;
+    height: 20px;
 }
 body.dark-mode .back-to-top svg {
     stroke: #fff;
@@ -1195,42 +1238,42 @@ body.dark-mode .back-to-top svg {
 
 /* بخش درباره ما */
 .about-section {
-    padding: 8rem 2rem;
+    padding: 6rem 1rem;
     background: url('assets/images/texture-bg.jpg') center/cover no-repeat;
     text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .about-content {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .about-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #3c2f2f;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 body.dark-mode .about-content h1 {
     color: #f4a261;
 }
 
 .about-content .section-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 body.dark-mode .about-content .section-subtitle {
     color: #ccc;
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .about-text p {
@@ -1239,15 +1282,15 @@ body.dark-mode .about-text p {
 
 /* بخش دان قهوه */
 .coffee-beans-section {
-    padding: 6rem 2rem;
+    padding: 4rem 1rem;
     background: url('assets/images/texture-bg.jpg') center/cover no-repeat;
     text-align: center;
 }
 
 .coffee-beans-section h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3c2f2f;
 }
 body.dark-mode .coffee-beans-section h1 {
@@ -1255,10 +1298,10 @@ body.dark-mode .coffee-beans-section h1 {
 }
 
 .coffee-beans-section .section-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 3rem;
-    max-width: 900px;
+    margin-bottom: 2rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
