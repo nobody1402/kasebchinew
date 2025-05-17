@@ -20,13 +20,13 @@ window.addEventListener('load', () => {
     }, 1000);
 });
 
-// جلوگیری از گیر کردن لودر در صورت خطا
+// جلوگیری از گیر کردن لودر
 setTimeout(() => {
     const loader = document.querySelector('.loader');
     if (loader && !loader.classList.contains('hidden')) {
         loader.classList.add('hidden');
     }
-}, 5000);
+}, 3000);
 
 // فیلتر خدمات
 document.querySelectorAll('.filter-btn').forEach(btn => {
