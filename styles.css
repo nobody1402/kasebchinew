@@ -969,6 +969,61 @@ body.dark-mode .blog-card p {
     color: #ccc;
 }
 
+/* استایل‌های صفحه پست وبلاگ */
+.blog-post {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: #f8edeb;
+}
+
+.blog-post h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3c2f2f;
+    margin-bottom: 1.5rem;
+}
+body.dark-mode .blog-post h1 {
+    color: #f4a261;
+}
+
+.blog-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.blog-post p, .blog-post ul {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+    margin: 1rem auto;
+    max-width: 800px;
+}
+body.dark-mode .blog-post p, body.dark-mode .blog-post ul {
+    color: #ccc;
+}
+
+.blog-post ul {
+    list-style-type: disc;
+    padding-right: 2rem;
+    text-align: right;
+}
+
+.blog-post a {
+    color: #e76f51;
+    text-decoration: none;
+}
+body.dark-mode .blog-post a {
+    color: #f4a261;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
 /* بخش فراخوان */
 .cta {
     padding: 4rem 1rem;
