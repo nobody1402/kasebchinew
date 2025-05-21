@@ -21,7 +21,6 @@
         </nav>
         <header class="rounded-lg p-6 mb-6 flex items-center justify-between">
             <div class="flex items-center">
-                <img src="../../../assets/images/logo-testsit.png" alt="لوگو TestSit" class="logo">
                 <h1 class="text-3xl font-bold">TestSit</h1>
             </div>
             <div class="text-sm text-right">
@@ -161,7 +160,6 @@
     </div>
     <div id="toast" class="toast hidden"></div>
     <button id="cartToggle" class="fixed bottom-4 right-4 btn bg-green-600 hover:bg-green-700">🛒</button>
-    <script src="/service-worker.js"></script>
     <script>
     let products = [];
     let cart = [];
@@ -291,7 +289,7 @@
             { name: "استند نیدل", price: 110000, image: "../images/related-1.jpg" }
             { name: "جوفرکس", price: 380000, image: "../images/related-2.jpg", shipping: '۱ روز کاری' },
             { name: "همزن برقی یونیک لایف", price: 385000, image: "../images/related-3.jpg", shipping: '۱ روز کاری' },
-            { name: "لولر چوبی سایز ۵۱", price: 220000, image: "../images/related-4.jpg", shipping: '۱ روز کاری' }
+            { name: "لولر چوبی سایز ۵۱", price: 220000, image: "../images/related-4.jpg", shipping: '۱ روز کاری' },
         ];
         relatedProducts.innerHTML = relatedItems.map(item => `
             <div class="card p-4">
