@@ -1,0 +1,30 @@
+<!-- register-step2.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ثبت‌نام فروشنده - مرحله ۲</title>
+</head>
+<body>
+  <h2>فرم ثبت‌نام فروشنده (مرحله ۲)</h2>
+  <form id="step2-form">
+    <label>نام فروشگاه: <input type="text" name="shopName" required></label><br>
+    <label>آدرس فروشگاه: <input type="text" name="shopAddress" required></label><br>
+    <label>تلفن ثابت: <input type="text" name="shopPhone" required></label><br>
+    <label>وبسایت فروشگاه: <input type="url" name="shopWebsite"></label><br>
+    <label>درباره فروشگاه: <textarea name="about"></textarea></label><br>
+    <label>روزهای کاری: <input type="text" name="workdays"></label><br>
+    <label>آدرس انبار: <input type="text" name="warehouse"></label><br>
+    <button type="submit">مرحله بعد</button>
+  </form>
+
+  <script>
+    document.getElementById('step2-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      localStorage.setItem('sellerStep2', JSON.stringify(data));
+      window.location.href = 'register-step3.html';
+    });
+  </script>
+</body>
+</html>
