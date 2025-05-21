@@ -1383,3 +1383,64 @@ body.dark-mode .blog-post a {
 .blog-post a:hover {
     text-decoration: underline;
 }
+/* فرم ثبت‌نام فروشنده */
+form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  font-family: 'Vazirmatn', sans-serif;
+  direction: rtl;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  color: #222;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="url"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #00b894;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #019870;
+}
