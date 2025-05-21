@@ -286,11 +286,12 @@
     function renderRelatedProducts() {
         const relatedProducts = document.getElementById('relatedProducts');
         const relatedItems = [
-            { name: "استند نیدل", price: 110000, image: "../images/related-1.jpg" }
-            { name: "جوفرکس", price: 380000, image: "../images/related-2.jpg", shipping: '۱ روز کاری' },
-            { name: "همزن برقی یونیک لایف", price: 385000, image: "../images/related-3.jpg", shipping: '۱ روز کاری' },
-            { name: "لولر چوبی سایز ۵۱", price: 220000, image: "../images/related-4.jpg", shipping: '۱ روز کاری' },
-        ];
+    { name: "استند نیدل", price: 110000, image: "../images/related-1.jpg", shipping: '۱ روز کاری' },
+    { name: "جوفرکس", price: 380000, image: "../images/related-2.jpg", shipping: '۱ روز کاری' },
+    { name: "همزن برقی یونیک لایف", price: 385000, image: "../images/related-3.jpg", shipping: '۱ روز کاری' },
+    { name: "لولر چوبی سایز ۵۱", price: 220000, image: "../images/related-4.jpg", shipping: '۱ روز کاری' }
+];
+
         relatedProducts.innerHTML = relatedItems.map(item => `
             <div class="card p-4">
                 <img src="${item.image}" alt="${item.name}" loading="lazy" class="mb-2 w-full h-40 object-cover rounded">
