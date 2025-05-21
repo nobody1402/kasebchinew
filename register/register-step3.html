@@ -1,0 +1,31 @@
+<!-- register-step3.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ثبت‌نام فروشنده - مرحله ۳</title>
+</head>
+<body>
+  <h2>فرم اطلاعات بانکی و مدارک</h2>
+  <form id="step3-form">
+    <label>نام بانک: <input type="text" name="bank" required></label><br>
+    <label>شماره کارت: <input type="text" name="cardNumber" required></label><br>
+    <label>شماره حساب: <input type="text" name="accountNumber" required></label><br>
+    <label>شماره شبا: <input type="text" name="sheba" required></label><br>
+    <label>نام صاحب حساب: <input type="text" name="ownerName" required></label><br>
+    <!-- مدارک آپلود واقعی نداره در گیت‌هاب -->
+    <label>تصویر کارت ملی (شبیه‌سازی): <input type="file" disabled></label><br>
+    <label>پروانه کسب (شبیه‌سازی): <input type="file" disabled></label><br><br>
+    <button type="submit">پایان ثبت‌نام</button>
+  </form>
+
+  <script>
+    document.getElementById('step3-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      localStorage.setItem('sellerStep3', JSON.stringify(data));
+      window.location.href = 'seller-profile.html';
+    });
+  </script>
+</body>
+</html>
