@@ -7,8 +7,7 @@
     <title>فروشگاه آرمان - TestSit</title>
     <script src="https://cdn.tailwindcss.com "></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style-vendor.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="../../style-vendor.css">
 </head>
 <body>
     <div class="container mx-auto p-4">
@@ -22,7 +21,7 @@
         </nav>
         <header class="rounded-lg p-6 mb-6 flex items-center justify-between">
             <div class="flex items-center">
-                <img src="/assets/images/logo-testsit.png" alt="لوگو TestSit" class="logo">
+                <img src="../../../assets/images/logo-testsit.png" alt="لوگو TestSit" class="logo">
                 <h1 class="text-3xl font-bold">TestSit</h1>
             </div>
             <div class="text-sm text-right">
@@ -154,9 +153,9 @@
         <footer class="rounded-lg p-6 mt-6">
             <p>تمامی حقوق این وب‌سایت محفوظ است. © ۱۴۰۴ TestSit</p>
             <div class="mt-4 flex justify-center gap-4">
-                <a href="/about.html">درباره ما</a>
-                <a href="/contact.html">تماس با ما</a>
-                <a href="/terms.html">شرایط و قوانین</a>
+                <a href="../../../about.html">درباره ما</a>
+                <a href="../../../contact.html">تماس با ما</a>
+                <a href="../../../terms.html">شرایط و قوانین</a>
             </div>
         </footer>
     </div>
@@ -289,10 +288,10 @@
     function renderRelatedProducts() {
         const relatedProducts = document.getElementById('relatedProducts');
         const relatedItems = [
-            { name: "استند نیدل", price: 110000, image: "/assets/images/related-1.jpg", shipping: '۱ روز کاری' },
-            { name: "جوفرکس", price: 380000, image: "/assets/images/related-2.jpg", shipping: '۱ روز کاری' },
-            { name: "همزن برقی یونیک لایف", price: 385000, image: "/assets/images/related-3.jpg", shipping: '۱ روز کاری' },
-            { name: "لولر چوبی سایز ۵۱", price: 220000, image: "/assets/images/related-4.jpg", shipping: '۱ روز کاری' }
+            { name: "استند نیدل", price: 110000, image: "../images/related-1.jpg" }
+            { name: "جوفرکس", price: 380000, image: "../images/related-2.jpg", shipping: '۱ روز کاری' },
+            { name: "همزن برقی یونیک لایف", price: 385000, image: "../images/related-3.jpg", shipping: '۱ روز کاری' },
+            { name: "لولر چوبی سایز ۵۱", price: 220000, image: "../images/related-4.jpg", shipping: '۱ روز کاری' }
         ];
         relatedProducts.innerHTML = relatedItems.map(item => `
             <div class="card p-4">
