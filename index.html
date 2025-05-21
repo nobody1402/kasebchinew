@@ -27,20 +27,31 @@
 
     <!-- هدر -->
     <header>
-        <div class="logo-text">KasebChi</div>
-        <div class="theme-switch">
+    <div class="logo-text" style="display: flex; align-items: center; gap: 1rem;">
+        KasebChi
+        <!-- آیکون تم کنار لوگو -->
+        <div class="theme-switch" style="display: inline-block;">
             <input type="checkbox" id="dark-mode-toggle" class="dark-mode-toggle">
             <label for="dark-mode-toggle">🌙</label>
         </div>
-        <nav class="nav-menu">
-            <button class="menu-toggle">☰</button>
-            <ul>
-                <li><a href="#home">خانه</a></li>
-                <li><a href="about.html">درباره ما</a></li>
-                <a href="register/register-step1.html" class="btn btn-primary">ثبت‌نام</a>
-            </ul>
-        </nav>
-    </header>
+    </div>
+
+    <!-- جستجو جدید -->
+    <div class="global-search-container" style="display: flex; align-items: center; gap: 0.5rem;">
+        <input id="globalSearchInput" type="text" placeholder="جستجو..." style="padding: 0.4rem 0.6rem; border-radius: 0.4rem; border: 1px solid #ccc;">
+        <button id="globalSearchBtn" style="padding: 0.4rem 0.8rem; background: #10b981; color: white; border: none; border-radius: 0.4rem; cursor: pointer;">جستجو</button>
+    </div>
+
+    <nav class="nav-menu">
+        <button class="menu-toggle">☰</button>
+        <ul>
+            <li><a href="#home">خانه</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="#signup">ثبت‌نام</a></li>
+        </ul>
+    </nav>
+</header>
+
 
     <!-- بخش خوش‌آمدگویی -->
     <section class="hero" id="home">
@@ -341,55 +352,7 @@
     </button>
 
     <script src="assets/js/main.js"></script>
-    <!-- 🔍 جستجو -->
-<div class="global-search-container" style="position: fixed; top: 1rem; left: 1rem; z-index: 9999;">
-  <input id="globalSearchInput" type="text" placeholder="جستجو در محصولات..." style="padding: 0.5rem; border-radius: 0.5rem; border: 1px solid #ccc; width: 200px;">
-  <div id="globalSearchResults" style="background: white; border: 1px solid #ccc; margin-top: 0.5rem; display: none; max-height: 300px; overflow-y: auto;"></div>
-</div>
-    <script src="assets/js/main.js"></script>
-
-<!-- 🔍 اسکریپت جستجوی سراسری -->
-<script>
-document.getElementById('globalSearchInput').addEventListener('input', async function(e) {
-    const query = e.target.value.trim().toLowerCase();
-    const resultsBox = document.getElementById('globalSearchResults');
-    resultsBox.innerHTML = '';
-    if (!query) {
-        resultsBox.style.display = 'none';
-        return;
-    }
-
-    try {
-        const sources = await fetch('search-sources.json').then(res => res.json());
-        let allProducts = [];
-
-        for (const src of sources) {
-            const products = await fetch(src).then(res => res.json());
-            const basePath = src.replace(/\/[^\/]+$/, '');
-            products.forEach(p => {
-                p.link = `${basePath}/${p.vendor_slug || ''}.html`;
-                allProducts.push(p);
-            });
-        }
-
-        const filtered = allProducts.filter(p => p.name.toLowerCase().includes(query));
-        if (filtered.length > 0) {
-            resultsBox.style.display = 'block';
-            filtered.forEach(p => {
-                const item = document.createElement('div');
-                item.innerHTML = `<a href="${p.link}" style="display: block; padding: 0.5rem; border-bottom: 1px solid #eee;">${p.name}</a>`;
-                resultsBox.appendChild(item);
-            });
-        } else {
-            resultsBox.style.display = 'block';
-            resultsBox.innerHTML = '<div style="padding: 0.5rem;">موردی یافت نشد.</div>';
-        }
-    } catch (err) {
-        console.error("خطا در جستجو:", err);
-    }
-});
-</script>
-
+   
 </body>
 </html>
 
