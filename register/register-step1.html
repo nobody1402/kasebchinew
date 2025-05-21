@@ -1,0 +1,35 @@
+<!-- register-step1.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ثبت‌نام فروشنده - مرحله ۱</title>
+</head>
+<body>
+  <h2>فرم ثبت‌نام فروشنده (مرحله ۱)</h2>
+  <form id="step1-form">
+    <label>نام: <input type="text" name="firstName" required></label><br>
+    <label>نام خانوادگی: <input type="text" name="lastName" required></label><br>
+    <label>کد ملی: <input type="text" name="nationalCode" required></label><br>
+    <label>شماره موبایل: <input type="tel" name="mobile" required></label><br>
+    <label>ایمیل (اختیاری): <input type="email" name="email"></label><br>
+    <label>دسته‌بندی خدمات: 
+      <select name="category">
+        <option>قهوه</option>
+        <option>لوازم صنعتی</option>
+        <option>اکسسوری بار</option>
+      </select>
+    </label><br><br>
+    <button type="submit">ادامه</button>
+  </form>
+
+  <script>
+    document.getElementById('step1-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      localStorage.setItem('sellerStep1', JSON.stringify(data));
+      window.location.href = 'register-step2.html';
+    });
+  </script>
+</body>
+</html>
