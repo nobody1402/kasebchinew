@@ -1,0 +1,183 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #064e3b;
+}
+
+.btn-secondary {
+    background-color: #f59e0b;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+}
+
+/* Card */
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Grid */
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Product List */
+.product-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background-color: #047857;
+}
+
+.toast.error {
+    background-color: #b91c1c;
+}
+
+/* Navigation */
+nav a {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+nav a:hover {
+    color: #10b981;
+}
+
+/* Header */
+header h1 {
+    color: #0f172a;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f5f9;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Cart Summary */
+#cartSummary {
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 40;
+}
+
+/* Modal */
+#compareModal .card {
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Dark Mode */
+.dark body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+.dark .card {
+    background-color: #1e293b;
+    color: #f1f5f9;
+}
+
+.dark nav a {
+    color: #cbd5e1;
+}
