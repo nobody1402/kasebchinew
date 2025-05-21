@@ -1,0 +1,32 @@
+<!-- seller-profile.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پروفایل فروشنده</title>
+</head>
+<body>
+  <h2>پروفایل فروشنده</h2>
+  <div id="profile"></div>
+
+  <script>
+    const step1 = JSON.parse(localStorage.getItem('sellerStep1') || '{}');
+    const step2 = JSON.parse(localStorage.getItem('sellerStep2') || '{}');
+    const step3 = JSON.parse(localStorage.getItem('sellerStep3') || '{}');
+
+    const profile = {
+      ...step1,
+      ...step2,
+      ...step3
+    };
+
+    document.getElementById('profile').innerHTML = `
+      <p><strong>نام:</strong> ${profile.firstName} ${profile.lastName}</p>
+      <p><strong>موبایل:</strong> ${profile.mobile}</p>
+      <p><strong>نام فروشگاه:</strong> ${profile.shopName}</p>
+      <p><strong>آدرس فروشگاه:</strong> ${profile.shopAddress}</p>
+      <p><strong>بانک:</strong> ${profile.bank} - ${profile.cardNumber}</p>
+    `;
+  </script>
+</body>
+</html>
